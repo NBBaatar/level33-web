@@ -4,47 +4,39 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Spinner from "../app/shared/Spinner";
 //Import Components
 const Dashboard = lazy(() => import("./dashboard/Dashboard"));
-const Ac = lazy(() => import("./air-condition/Ac.js"));
-const Buttons = lazy(() => import("./basic-ui/Buttons"));
-const Dropdowns = lazy(() => import("./basic-ui/Dropdowns"));
-const Typography = lazy(() => import("./basic-ui/Typography"));
-const BasicElements = lazy(() => import("./form-elements/BasicElements"));
-const BasicTable = lazy(() => import("./tables/BasicTable"));
-const Mdi = lazy(() => import("./icons/Mdi"));
-const ChartJs = lazy(() => import("./charts/ChartJs"));
-const Error404 = lazy(() => import("./error-pages/Error404"));
-const Error500 = lazy(() => import("./error-pages/Error500"));
-const Login = lazy(() => import("./user-pages/Login"));
-const Register1 = lazy(() => import("./user-pages/Register"));
+const Ac = lazy(() => import("./air-condition/Index.js"));
+const Balcony = lazy(() => import("./balcony/Index.js"));
+const Bathroom = lazy(() => import("./tiles/bathroom/Index.js"));
+const DoorFrame = lazy(() => import("./door-frame/Index.js"));
+const SteelFrame = lazy(() => import("./steel-frame/Index.js"));
+const Electrical = lazy(() => import("./electric/Index.js"));
+const Ensuite = lazy(() => import("./tiles/ensuite/Index.js"));
+const Hebel = lazy(() => import("./hebel/Index.js"));
+const Kitchen = lazy(() => import("./tiles/kitchen/Index.js"));
+const Laundry = lazy(() => import("./tiles/laundry/Index.js"));
+const Plumging = lazy(() => import("./plumbing/Index"));
+const WaterProofAfter = lazy(() => import("./water-proof/after/Index.js"));
+const WaterProofBefore = lazy(() => import("./water-proof/before/Index.js"));
+
 class AppRoutes extends Component {
   render() {
     return (
       <Suspense fallback={<Spinner />}>
         <Switch>
           <Route exact path="/dashboard" component={Dashboard} />
-
-          <Route path="/basic-ui/buttons" component={Buttons} />
-          <Route path="/basic-ui/dropdowns" component={Dropdowns} />
-          <Route path="/basic-ui/typography" component={Typography} />
-
-          <Route
-            path="/form-Elements/basic-elements"
-            component={BasicElements}
-          />
-
-          <Route path="/tables/basic-table" component={BasicTable} />
-
-          <Route path="/icons/mdi" component={Mdi} />
-
-          <Route path="/charts/chart-js" component={ChartJs} />
-
-          <Route path="/user-pages/login-1" component={Login} />
-          <Route path="/user-pages/register-1" component={Register1} />
-
-          <Route path="/error-pages/error-404" component={Error404} />
-          <Route path="/error-pages/error-500" component={Error500} />
-          <Route path="/air-condition/ac" component={Ac} />
-
+          <Route path="/waterproof/after" component={WaterProofAfter} />
+          <Route path="/waterproof/before" component={WaterProofBefore} />
+          <Route path="/balcony" component={Balcony} />
+          <Route path="/plumbing" component={Plumging} />
+          <Route path="/tiles/bathroom" component={Bathroom} />
+          <Route path="/door-frame" component={DoorFrame} />
+          <Route path="/steel-frame" component={SteelFrame} />
+          <Route path="/electrical" component={Electrical} />
+          <Route path="/tiles/ensuite" component={Ensuite} />
+          <Route path="/hebel" component={Hebel} />
+          <Route path="/tiles/kitchen" component={Kitchen} />
+          <Route path="/tiles/laundry" component={Laundry} />
+          <Route path="/air-condition" component={Ac} />
           <Redirect to="/dashboard" />
         </Switch>
       </Suspense>

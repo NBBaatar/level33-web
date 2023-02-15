@@ -1,6 +1,6 @@
 import React from "react";
 
-function Ac() {
+function Index() {
   return (
     <div>
       <div className="row">Air Condition</div>
@@ -8,4 +8,4 @@ function Ac() {
   );
 }
 
-export default Ac;
+export default Index;
