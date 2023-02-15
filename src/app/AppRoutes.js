@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 
 import Spinner from "../app/shared/Spinner";
 //Import Components
+const Login = lazy(() => import("./examples/user-pages/Login.js"));
 const Dashboard = lazy(() => import("./dashboard/Dashboard"));
 const Ac = lazy(() => import("./air-condition/Index.js"));
 const Balcony = lazy(() => import("./balcony/Index.js"));
@@ -23,7 +24,8 @@ class AppRoutes extends Component {
     return (
       <Suspense fallback={<Spinner />}>
         <Switch>
-          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/" component={Login} />
+          <Route path="/dashboard" component={Dashboard} />
           <Route path="/waterproof/after" component={WaterProofAfter} />
           <Route path="/waterproof/before" component={WaterProofBefore} />
           <Route path="/balcony" component={Balcony} />
