@@ -7,10 +7,10 @@ export class Login extends Component {
     return (
       <div>
         <div className="d-flex align-items-center auth px-0">
-          <div className="row w-100 mx-0">
+          <div className="row w-100 mx-0 ">
             <div className="col-lg-4 mx-auto">
-              <div className="card text-left py-5 px-4 px-sm-5">
-                <Form className="pt-3">
+              <div className="card text-left py-5 px-4 px-lg-5">
+                <Form className="pt-5">
                   <Form.Group className="d-flex search-field">
                     <Form.Control
                       type="email"
